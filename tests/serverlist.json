@@ -1,0 +1,29 @@
+{
+    "targets" : [
+        {
+            "ServerName": "daffodil.duck.loc",
+            "InstanceName": "daffodil.duck.loc\\instance_a",
+            "UserName": "marksql",
+            "Password": "marksql",
+            "SQLPort": 2000,
+            "Notes": "Testing a named instance on a static port with SQL Auth"
+        },
+        {
+            "ServerName": "daffodil.duck.loc",
+            "InstanceName": "daffodil.duck.loc\\instance_b",
+            "Notes": "Testing a named instance on a dynamic port with Windows Auth"
+        },
+        {
+            "ServerName": "wisteria.duck.loc",
+            "Notes": "Testing a default instance without specifying it with Windows Auth"
+        },
+        {
+            "ServerName": "violet.duck.loc",
+            "InstanceName": "violet.duck.loc\\instance_a",
+            "Notes": "Testing a named instance on a different subnet behind a firewall with only the relevant ports open"
+        }      
+            
+    ],
+    "SentryOneServer": "crocus.duck.loc",
+    "SentryOneDatabase": "SentryOne"
+}

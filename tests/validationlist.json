@@ -1,0 +1,29 @@
+{
+    "tests" : [
+        {
+            "Test": "Should validate where json only contains servername",
+            "ServerNameShouldBe": "wisteria.duck.loc",
+            "InstanceNameShouldBe": "wisteria.duck.loc"
+        },
+        {
+            "Test": "Should validate against named instance with SQL Authentication",
+            "ServerNameShouldBe": "daffodil.duck.loc",
+            "InstanceNameShouldBe": "daffodil.duck.loc\\instance_a"
+        },
+        {
+            "Test": "Should validate against named instance with Windows Authentication",
+            "ServerNameShouldBe": "daffodil.duck.loc",
+            "InstanceNameShouldBe": "daffodil.duck.loc\\instance_b"
+        },
+        {
+            "Test": "Limited target should validate against named instance with Windows Authentication",
+            "ServerNameShouldBe": "violet.duck.loc",
+            "InstanceNameShouldBe": "violet.duck.loc\\instance_a"
+        },
+        {
+            "Test": "Should fail to validate an unreacheable server",
+            "ServerNameShouldBe": "sulphur.duck.loc",
+            "InstanceNameShouldBe": "sulphur.duck.loc"
+        }                         
+    ]
+}
