@@ -66,8 +66,9 @@ Test-SentryOneTarget -ServerName SQLSERVERBOX
             throw "This script must be run with Administrative privileges. Run as Administrator and try again."
         }
         #>
-        if(-not (Test-IsRSATInstalled)) {
-            throw "This script requires Remote Server Administration Tools (RSAT) installed. Please download and install and try again."
+        $IsRSATInstalled = Test-IsRSATInstalled
+        if(-not ($IsRSATInstalled)) {
+            Write-Warning "This script requires Remote Server Administration Tools (RSAT) installed. Enumeration of permissions may be incorrect."
         }
 
         if((Get-Module -Name SqlServer -ListAvailable) -eq $null) {

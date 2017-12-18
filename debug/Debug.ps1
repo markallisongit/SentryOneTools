@@ -12,18 +12,6 @@ Disconnect-SQLSentry
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 # Install the Sqlserver module so we have access to Invoke-SqlCmd
 Install-Module -Name SqlServer -Scope CurrentUser
 
@@ -38,7 +26,7 @@ Install-Module -Name SqlServer -Scope CurrentUser
 
 
 
-Set-Location C:\Repos\Test-SentryOneTarget
+Set-Location C:\Repos\SentryOneTools
 Import-Module .\SentryOneTools.psd1 -Force
 Get-Command -Module SentryOneTools 
 
@@ -49,16 +37,9 @@ Get-Command -Module SentryOneTools
 
 
 
-
-$servers = Get-Content ".\tests\serverlist.json" -Raw -Encoding UTF8 | ConvertFrom-Json
-$servers.targets
-
-
-
-
-
 # test the servers can be monitored
 $servers = Get-Content ".\tests\serverlist.json" -Raw -Encoding UTF8 | ConvertFrom-Json
+$servers.targets
 $result = $servers.targets | % { Test-SentryOneTarget $_.ServerName $_.InstanceName $_.UserName $_.Password $_.SQLPort }
 $result | ? {$_.SentryOneMode -ne "Full"}
 
