@@ -1,5 +1,7 @@
 ﻿# SentryOne module
 Import-Module "C:\Program Files\SentryOne\11.0\Intercerve.SqlSentry.Powershell.psd1" -Force
+Get-Module 
+Get-Command -module 'Intercerve.SqlSentry.Powershell'
 Connect-SQLSentry -ServerName CROCUS.DUCK.LOC -DatabaseName SentryOne
 Get-SQLSentryConfiguration
 Disconnect-SQLSentry
